@@ -1,0 +1,16 @@
+<div class="header">
+
+    <mat-toolbar color="primary">
+
+        <img class="myLogo" [src]="myLogo" width="60" height="50" alt="icon">
+
+        <div style="margin-left: 25px;">
+            <button routerLinkActive="active" [routerLink]="['/']" mat-button class="">Home</button>
+
+            <button *ngIf="!translate" routerLinkActive="active" [routerLink]="['projects']" mat-button class="">Projects</button>
+            <button *ngIf="translate" routerLinkActive="active" [routerLink]="['projects']" mat-button class="">Proyectos</button>
+        </div>
+
+    </mat-toolbar>
+
+</div>

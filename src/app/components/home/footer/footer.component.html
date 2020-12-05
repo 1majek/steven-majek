@@ -1,0 +1,168 @@
+<footer fxLayout="column" fxLayoutAlign="center center" fxLayoutGap.xs="20%" class="">
+
+    <div fxLayout="column" fxLayoutAlign="space-evenly center" class="footer-content">
+
+        <!--fxLayoutGap.lt-md="1%"-->
+        <div fxLayout.gt-md="row" fxLayoutAlign="space-between center" fxLayout.lt-md="column-reverse" fxLayoutAlign.lt-md="space-evenly center" fxLayoutGap="35%" fxLayoutGap.lt-md="0%" class="infoForm">
+
+            <div class="info" fxLayout="column" fxLayoutGap="5%" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center">
+                <div fxLayoutGap="10px" fxLayoutAlign="center center">
+                    <i class="fa fa-phone"></i>
+                    <span>+34 66 35 09 340</span>
+                </div>
+
+                <div fxLayoutGap="10px" fxLayoutAlign="center center">
+                    <i class="fa fa-envelope"></i>
+                    <span>majek1@hotmail.com</span>
+                </div>
+
+            </div>
+
+            <div class="card animate__animated animate__fadeInUp animate__slow">
+
+                <mat-card *ngIf="!translate">
+                    <mat-card-header>
+                        <h1>Contact me</h1>
+                    </mat-card-header>
+
+                    <mat-card-content>
+
+                        <form fxLayout="column" [formGroup]="form">
+
+                            <mat-form-field color="accent" appearance="legacy">
+                                <mat-label>Name</mat-label>
+                                <input minlength="3" formControlName="nombre" type="text" matInput>
+                                <mat-error *ngIf="nameError">name should be more than 2 characters</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field color="accent" appearance="legacy">
+                                <mat-label>Subject</mat-label>
+                                <input minlength="1" formControlName="asunto" type="text" matInput>
+                                <mat-error *ngIf="asuntoError">suject should be more than a characters</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field color="accent" appearance="legacy">
+                                <mat-label>Email</mat-label>
+                                <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" formControlName="email" type="email" matInput>
+                                <mat-error *ngIf="emailError">not a valid format</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field color="accent" appearance="legacy">
+                                <mat-label>Message</mat-label>
+                                <textarea minlength="10" formControlName="mensaje" class="desc" matInput></textarea>
+                                <mat-error *ngIf="mensajeError">message should be more than 9 characters</mat-error>
+                            </mat-form-field>
+
+
+                        </form>
+
+                    </mat-card-content>
+
+
+                    <mat-card-actions fxLayoutAlign="end">
+                        <button (click)="sendEmail()" [disabled]="form.invalid" color="accent" mat-flat-button><i class="fa fa-paper-plane"></i> Send</button>
+                    </mat-card-actions>
+
+                </mat-card>
+
+
+
+                <mat-card *ngIf="translate" class="spanish">
+                    <mat-card-header>
+                        <h1>Contáctame</h1>
+                    </mat-card-header>
+
+                    <mat-card-content>
+
+                        <form fxLayout="column" [formGroup]="form">
+
+                            <mat-form-field color="accent" appearance="legacy">
+                                <mat-label>Nombre</mat-label>
+                                <input minlength="3" formControlName="nombre" type="text" matInput>
+                                <mat-error *ngIf="nameError">nombre debe tener más de 2 caracteres</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field color="accent" appearance="legacy">
+                                <mat-label>Asunto</mat-label>
+                                <input minlength="1" formControlName="asunto" type="text" matInput>
+                                <mat-error *ngIf="asuntoError">asunto debe de tener más de un caracteres</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field color="accent" appearance="legacy">
+                                <mat-label>Correo electrónico</mat-label>
+                                <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" formControlName="email" type="email" matInput>
+                                <mat-error *ngIf="emailError">formato inválido</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field color="accent" appearance="legacy">
+                                <mat-label>Mensaje</mat-label>
+                                <textarea minlength="10" formControlName="mensaje" class="desc" matInput></textarea>
+                                <mat-error *ngIf="mensajeError">mensaje debe de tener más de 9 caracteres</mat-error>
+                            </mat-form-field>
+
+
+                        </form>
+
+                    </mat-card-content>
+
+
+                    <mat-card-actions fxLayoutAlign="end">
+                        <button (click)="sendEmail()" [disabled]="form.invalid" color="accent" mat-flat-button> <i class="fa fa-paper-plane"></i> Enviar</button>
+                    </mat-card-actions>
+
+                </mat-card>
+
+            </div>
+
+
+        </div>
+
+        <!--Icons-->
+
+        <div fxLayout="row" fxLayoutAlign="space-evenly" class="icons">
+
+            <div class="facebook">
+                <button (click)="openFacebook()" mat-icon-button class="example-icon">
+                    <i class="fa fa-facebook fa-2x"></i>
+                </button>
+            </div>
+
+            <div class="instagram">
+                <button (click)="openInstagram()" mat-icon-button class="example-icon">
+                    <i class="fa fa-instagram fa-2x"></i>
+                </button>
+            </div>
+
+            <div class="whatsapp">
+                <button (click)="openWhatsapp()" mat-icon-button class="example-icon">
+                    <i class="fa fa-whatsapp fa-2x"></i>
+                </button>
+            </div>
+
+            <div class="git">
+
+                <button (click)="openGitHub()" mat-icon-button class="example-icon">
+                    <i class="fa fa-github fa-2x"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div>
+        <mat-chip-list>
+
+            <p *ngIf="!translate">&copy; {{anio | date:'yyyy'}} {{nombre}}
+                <mat-chip color="accent" selected class="r">With Angular</mat-chip>
+            </p>
+            <p *ngIf="translate">&copy; {{anio | date:'yyyy'}} {{nombre}}
+                <mat-chip color="accent" selected class="">Con Angular</mat-chip>
+            </p>
+        </mat-chip-list>
+
+    </div>
+</footer>

@@ -1,0 +1,176 @@
+<div class="main">
+
+    <div class="top animate__animated animate__fadeIn animate__slow" fxLayout="row" fxLayoutAlign="space-around center" fxLayout.lt-md="column" fxLayoutGap.lt-md="20px">
+
+        <div class="profile">
+            <mat-card class="card profile animated fast fadeIn">
+
+                <mat-card-header fxLayout="row" fxLayoutAlign="center" class="header profile">
+                    <img fxHide.xs [src]="myPic" class="profile-header-img" alt={{nombre}} width="290" height="290">
+                    <img fxHide.gt-xs [src]="myPic" class="profile-header-img" alt={{nombre}} width="190" height="190">
+                </mat-card-header>
+
+                <mat-card-subtitle fxLayout="row" fxLayoutAlign="center" class="title profile animate__animated animate__zoomInDown animate__slow">
+                    {{nombre | uppercase}}, 29
+                </mat-card-subtitle>
+
+                <mat-card-content fxLayout="row" fxLayoutAlign="center" class="content profile ">
+                    <p *ngIf="translate">
+                        {{descripcionEsp}}
+                    </p>
+
+                    <p *ngIf="!translate">
+                        {{descripcionEn}}
+                    </p>
+                    <!--<p *ngIf="translate" class="lead animated fast fadeIn"> {{descripcionEsp}}</p>
+                <p *ngIf="!translate" class="lead animated fast fadeIn"> {{descripcionEn}}</p>-->
+                </mat-card-content>
+
+                <mat-card-actions fxLayout="row" fxLayoutAlign="center">
+                    <button mat-flat-button *ngIf="translate" (click)="traducir()"><i class="fa fa-language"></i> Translate</button>
+                    <button mat-flat-button *ngIf="!translate" (click)="traducir()"><i class="fa fa-language"></i> Traducir</button>
+                </mat-card-actions>
+
+            </mat-card>
+        </div>
+
+        <div fx class="skills animated">
+
+            <mat-card class="card skills">
+
+                <mat-card-header class="skill header">
+                    <h3 *ngIf="!translate" class="lead animated fast fadeIn">Skills</h3>
+                    <h3 *ngIf="translate" class="lead animated fast fadeIn">Habilidades</h3>
+                </mat-card-header>
+
+                <mat-divider color="accent"></mat-divider>
+
+                <mat-card-content fxLayout="row" fxLayoutAlign="space-around center" class="content skills">
+
+                    <div>
+                        <mat-selection-list [multiple]="false">
+                            <mat-list-option *ngFor="let skill of skills | slice:0:7">{{skill}}</mat-list-option>
+                        </mat-selection-list>
+                    </div>
+
+                    <div>
+
+                        <mat-selection-list [multiple]="false">
+                            <mat-list-option *ngFor="let skill of skills | slice:7:14">{{skill}}</mat-list-option>
+                        </mat-selection-list>
+
+                    </div>
+
+                </mat-card-content>
+
+                <mat-card-actions fxLayout="row" fxLayoutAlign="center">
+                    <div *ngIf="!translate">
+                        <p>Eager to learn more</p>
+                    </div>
+
+                    <div *ngIf="translate">
+                        <p>Con muchas ganas de aprender aún más</p>
+                    </div>
+                </mat-card-actions>
+
+            </mat-card>
+
+        </div>
+
+    </div>
+
+
+    <div class="recient">
+
+        <mat-card class="recient-card">
+
+            <mat-card-header class="recient header" fxLayout="row" fxLayoutAlign="center">
+                <h3 *ngIf="!translate" class="lead animated animate__animated animate__fadeIn">Recent projects</h3>
+                <h3 *ngIf="translate" class="lead animated ">Proyectos recientes</h3>
+            </mat-card-header>
+
+            <mat-divider></mat-divider>
+
+            <!--fxLayout="row" fxLayoutAlign="space-around center" fxLayout.lt-xl="column" fxLayoutAlign="center center"-->
+
+            <mat-card-content class="bot content recient">
+
+                <div class="taxi">
+
+                    <mat-card class="card inner-recient-card">
+
+                        <mat-card-header class="inner-recient-header">
+                            <a [routerLink]="['/projects']"> <img [src]="taxiImg" class="inner-card-img mat-card-image" alt="Taxi app" title="Taxis Cala dor"></a>
+                        </mat-card-header>
+
+                        <mat-card-content class="innner-recent-content animate__animated animate__fadeIn animate__slow">
+
+                            <h2 *ngIf="!translate" class="animated fast fadeIn">{{recientsApps.taxisCalador.nombre}}
+                                <mat-chip class="" selected>{{recientsApps.taxisCalador.typeIngles}}</mat-chip>
+                            </h2>
+                            <h2 *ngIf="translate" class=" animated fast fadeIn">{{recientsApps.taxisCalador.nombre}}
+                                <mat-chip class="" selected>{{recientsApps.taxisCalador.typeEsp}}</mat-chip>
+                            </h2>
+                            <p *ngIf="!translate" class="lead animated fast fadeIn">{{recientsApps.taxisCalador.descripcionIngles}}</p>
+                            <p *ngIf="translate" class="lead animated fast fadeIn">{{recientsApps.taxisCalador.descripcionEsp}}</p>
+
+                        </mat-card-content>
+
+                    </mat-card>
+
+                </div>
+
+                <div class="majek">
+
+                    <mat-card class="card inner-recient-card">
+
+                        <mat-card-header class="inner-recient-header">
+                            <a [routerLink]="['/projects']"> <img [src]="majekImg" class="inner-card-img mat-card-image" alt="Majek app" title="Majek"> </a>
+                        </mat-card-header>
+
+                        <mat-card-content class="innner-recent-content animate__animated animate__fadeIn animate__slow">
+                            <h2 *ngIf="!translate" class="animated fast fadeIn">{{recientsApps.majek.nombre}}
+                                <mat-chip selected class="">{{recientsApps.majek.typeIngles}}</mat-chip>
+                            </h2>
+                            <h2 *ngIf="translate" class="animated fast fadeIn">{{recientsApps.majek.nombre}}
+                                <mat-chip selected class="">{{recientsApps.majek.typeEsp}}</mat-chip>
+                            </h2>
+                            <p *ngIf="!translate" class="lead">{{recientsApps.majek.descripcionIngles}}</p>
+                            <p *ngIf="translate" class="lead animated fast fadeIn">{{recientsApps.majek.descripcionEsp}}</p>
+                        </mat-card-content>
+
+                    </mat-card>
+
+                </div>
+
+                <div class="yomi">
+
+                    <mat-card class="card inner-recient-card">
+
+                        <mat-card-header style="background-color: antiquewhite;" class="inner-recient-header">
+                            <a [routerLink]="['/projects']"> <img [src]="yomiImg" class="inner-card-img mat-card-image" alt="Yomi app" title="Yomi"> </a>
+                        </mat-card-header>
+
+                        <mat-card-content class="innner-recent-content animate__animated animate__fadeIn animate__slow">
+                            <h2 *ngIf="!translate" class="">{{recientsApps.yomi.nombre}}
+                                <mat-chip selected class="">Web App</mat-chip>
+                            </h2>
+                            <h2 *ngIf="translate" class="">{{recientsApps.yomi.nombre}}
+                                <mat-chip selected class="">Aplicación Web</mat-chip>
+                            </h2>
+                            <p *ngIf="!translate" class="lead">{{recientsApps.yomi.descripcionIngles}}</p>
+                            <p *ngIf="translate" class="lead animated fast fadeIn">{{recientsApps.yomi.descripcionEsp}}</p>
+                        </mat-card-content>
+
+                    </mat-card>
+
+                </div>
+
+
+            </mat-card-content>
+
+        </mat-card>
+
+    </div>
+
+</div>

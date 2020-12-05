@@ -1,0 +1,49 @@
+footer {
+    color: white;
+    /*position: fixed;*/
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--light);
+}
+
+.footer-content {
+    width: 100%;
+    height: 100%;
+}
+
+.icons {
+    width: 15%;
+}
+
+mat-card {
+    width: 350px;
+    border-radius: 0%;
+}
+
+.infoForm {}
+
+.info {
+    width: 100%;
+}
+
+.form {
+    /* width: 35%;*/
+}
+
+.facebook:hover,
+.instagram:hover,
+.whatsapp:hover,
+.git:hover {
+    color: var(--pink);
+}
+
+@media only screen and (max-width: 960px) {
+    .info {
+        width: auto;
+    }
+    .infoForm {
+        width: auto;
+        height: 100%;
+    }
+}

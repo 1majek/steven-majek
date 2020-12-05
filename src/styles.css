@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+    --light: #343a40;
+    --dark: #181c1f;
+    --pink: #ff4081;
+}
+
+
+/*footer {
+    color: white;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}*/
+
+.my-bg {
+    background-color: #cbd3da;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: var(--dark);
+}
+
+.mat-toolbar.mat-primary {
+    background-color: var(--light);
+}
+
+.mat-flat-button {
+    background-color: var(--dark);
+    color: white;
+}
+
+.mat-tab-label {
+    color: white;
+}
