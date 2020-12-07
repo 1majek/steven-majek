@@ -27,7 +27,7 @@
 
                     <mat-card-content>
 
-                        <form name="contact" method="POST" data-netlify="true" fxLayout="column" [formGroup]="form">
+                        <form fxLayout="column" [formGroup]="form">
 
                             <mat-form-field color="accent" appearance="legacy">
                                 <mat-label>Name</mat-label>
@@ -53,13 +53,15 @@
                                 <mat-error *ngIf="mensajeError">message should be more than 9 characters</mat-error>
                             </mat-form-field>
 
-                            <button type="submit" [disabled]="form.invalid" color="accent" mat-flat-button><i class="fa fa-paper-plane"></i> Send</button>
-
 
                         </form>
 
                     </mat-card-content>
 
+
+                    <mat-card-actions fxLayoutAlign="end">
+                        <button (click)="sendEmail()" [disabled]="form.invalid" color="accent" mat-flat-button><i class="fa fa-paper-plane"></i> Send</button>
+                    </mat-card-actions>
 
                 </mat-card>
 
@@ -72,7 +74,7 @@
 
                     <mat-card-content>
 
-                        <form data-netlify="true" fxLayout="column" [formGroup]="form">
+                        <form fxLayout="column" [formGroup]="form">
 
                             <mat-form-field color="accent" appearance="legacy">
                                 <mat-label>Nombre</mat-label>
@@ -105,7 +107,7 @@
 
 
                     <mat-card-actions fxLayoutAlign="end">
-                        <button type="submit" (click)="sendEmail()" [disabled]="form.invalid" color="accent" mat-flat-button> <i class="fa fa-paper-plane"></i> Enviar</button>
+                        <button (click)="sendEmail()" [disabled]="form.invalid" color="accent" mat-flat-button> <i class="fa fa-paper-plane"></i> Enviar</button>
                     </mat-card-actions>
 
                 </mat-card>
