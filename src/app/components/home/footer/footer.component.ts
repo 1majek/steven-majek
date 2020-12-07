@@ -103,7 +103,7 @@ export class FooterComponent implements OnInit, OnDestroy {
         this.snackBar.open(resp.respuesta, 'close', {horizontalPosition: 'end', verticalPosition: 'top', duration: 5000});
       }, err => {
         console.log(err);
-        this.snackBar.open(err.error, 'close', {horizontalPosition: 'end', verticalPosition: 'top', duration: 5000});
+        this.snackBar.open(err.message, 'close', {horizontalPosition: 'end', verticalPosition: 'top', duration: 5000});
       });
   }
 
