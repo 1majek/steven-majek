@@ -5,7 +5,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { FooterComponent } from './components/home/footer/footer.component';
 
 const routerOptions: ExtraOptions = {
-  relativeLinkResolution: 'legacy'
+  useHash: true
 };
 
 
@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'home', component: BodyComponent},
   { path: 'projects', component: ProjectsComponent},
   { path: 'contactMe', component: FooterComponent},
-  { path: '**', pathMatch: 'full', redirectTo: '/home' }
+  { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 
 @NgModule({
