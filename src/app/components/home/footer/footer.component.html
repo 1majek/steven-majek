@@ -27,7 +27,7 @@
 
                     <mat-card-content>
 
-                        <form data-netlify="true" fxLayout="column" [formGroup]="form">
+                        <form name="contact" method="POST" data-netlify="true" fxLayout="column" [formGroup]="form">
 
                             <mat-form-field color="accent" appearance="legacy">
                                 <mat-label>Name</mat-label>
@@ -60,7 +60,7 @@
 
 
                     <mat-card-actions fxLayoutAlign="end">
-                        <button type="submit" (click)="sendEmail()" [disabled]="form.invalid" color="accent" mat-flat-button><i class="fa fa-paper-plane"></i> Send</button>
+                        <button type="submit" [disabled]="form.invalid" color="accent" mat-flat-button><i class="fa fa-paper-plane"></i> Send</button>
                     </mat-card-actions>
 
                 </mat-card>
