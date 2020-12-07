@@ -53,15 +53,17 @@
                                 <mat-error *ngIf="mensajeError">message should be more than 9 characters</mat-error>
                             </mat-form-field>
 
+                            <mat-card-actions fxLayoutAlign="end">
+                                <button type="submit" [disabled]="form.invalid" color="accent" mat-flat-button><i class="fa fa-paper-plane"></i> Send</button>
+                            </mat-card-actions>
+
 
                         </form>
 
                     </mat-card-content>
 
 
-                    <mat-card-actions fxLayoutAlign="end">
-                        <button type="submit" [disabled]="form.invalid" color="accent" mat-flat-button><i class="fa fa-paper-plane"></i> Send</button>
-                    </mat-card-actions>
+
 
                 </mat-card>
 
