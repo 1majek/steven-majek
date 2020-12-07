@@ -87,24 +87,43 @@ export class FooterComponent implements OnInit, OnDestroy {
     });
   }
 
+  resetForm() {
+    this.form.reset({
+      nombre: '',
+      asunto: '',
+      email: '',
+      mensaje: ''
+    });
+  }
+
   sendEmail() {
 
-  const body = new HttpParams()
+  const body =
+  `form-name=contact&nombre=
+  ${this.form.value.nombre}
+  &email=${this.form.value.email}
+  &asunto=${this.form.value.asunto}
+  &mensaje=${this.form.value.mensaje}`;
+
+  /*const body = new HttpParams()
   .set('form-name', 'contact')
   .append('nombre', this.form.value.nombre)
   .append('asunto', this.form.value.asunto)
   .append('email', this.form.value.email)
-  .append('mensaje', this.form.value.mensaje);
+  .append('mensaje', this.form.value.mensaje);*/
 
 
     this.email = this.form.value;
     this.servicio.sendEmail(body)
       .subscribe(resp => {
+        console.log(resp);
         this.snackBar.open('Sent, Enviado', 'close', {horizontalPosition: 'end', verticalPosition: 'top', duration: 5000});
+        this.resetForm();
       }, err => {
         console.log(err);
         this.snackBar.open(err.message, 'close', {horizontalPosition: 'end', verticalPosition: 'top', duration: 5000});
       });
+
   }
 
 }

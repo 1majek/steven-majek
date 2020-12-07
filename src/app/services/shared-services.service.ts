@@ -17,8 +17,9 @@ export class SharedServices {
   constructor(private http: HttpClient) {
    }
 
-  public sendEmail(email: HttpParams) {
-     return this.http.post('/', email.toString(), {headers: { 'Content-Type': 'application/x-www-form-urlencoded' }});
+  public sendEmail(email) {
+    console.log(email);
+     return this.http.post('/', email, {headers: { 'Content-Type': 'application/x-www-form-urlencoded' }});
   }
 
 }
