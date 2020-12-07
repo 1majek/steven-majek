@@ -52,7 +52,6 @@ export class ProjectsComponent implements OnInit {
                       this.taxiInfo, this.taxiReservas, this.taxiReservasHechas,
   this.taxiSearch*/];
 
-                  console.log(this.taxiImages);
 
     this.majekImges = [this.majekDetails, this.majekHome, this.majekLogin,
                       this.majekLoginForm, this.majekRate, this.majekRegi,
