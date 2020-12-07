@@ -47,12 +47,6 @@ export class ProjectsComponent implements OnInit {
 
   constructor() {
 
-    this.taxiImages = [ {url: this.taxiAdd, caption: 'Testing' }, {url: this.taxiDetails, caption: 'details'}
-      /*this.taxiAdd, this.taxiDetails, this.taxiEdit,
-                      this.taxiInfo, this.taxiReservas, this.taxiReservasHechas,
-  this.taxiSearch*/];
-
-
     this.majekImges = [this.majekDetails, this.majekHome, this.majekLogin,
                       this.majekLoginForm, this.majekRate, this.majekRegi,
                       this.majekSearch, this.majekSell, this.majekTop];
