@@ -100,7 +100,7 @@ export class FooterComponent implements OnInit, OnDestroy {
     this.email = this.form.value;
     this.servicio.sendEmail(body)
       .subscribe(resp => {
-        this.snackBar.open(resp.respuesta, 'close', {horizontalPosition: 'end', verticalPosition: 'top', duration: 5000});
+        this.snackBar.open('Sent, Enviado', 'close', {horizontalPosition: 'end', verticalPosition: 'top', duration: 5000});
       }, err => {
         console.log(err);
         this.snackBar.open(err.message, 'close', {horizontalPosition: 'end', verticalPosition: 'top', duration: 5000});
