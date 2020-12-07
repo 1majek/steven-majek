@@ -1,3 +1,4 @@
+import { HttpParams } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
@@ -87,8 +88,17 @@ export class FooterComponent implements OnInit, OnDestroy {
   }
 
   sendEmail() {
+
+  const body = new HttpParams()
+  .set('form-name', 'contact')
+  .append('nombre', this.form.value.nombre)
+  .append('asunto', this.form.value.asunto)
+  .append('email', this.form.value.email)
+  .append('mensaje', this.form.value.mensaje);
+
+
     this.email = this.form.value;
-    this.servicio.sendEmail(this.email)
+    this.servicio.sendEmail(body)
       .subscribe(resp => {
         this.snackBar.open(resp.respuesta, 'close', {horizontalPosition: 'end', verticalPosition: 'top', duration: 5000});
       }, err => {
