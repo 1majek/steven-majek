@@ -9,14 +9,12 @@ import { Email } from '../model/mail';
 export class SharedServices {
 
   translate: Subject<boolean> = new Subject();
-  header: HttpHeaders;
 
   url = 'http://localhost:3001/sendEmail';
   // url = 'https://stevenmajek.herokuapp.com/sendEmail';
   // url = 'https://1majek.github.io/stevenmajek/sendEmail';
 
   constructor(private http: HttpClient) {
-    this.header.set('Content-Type', 'application/ x-www-form-urlencoded');
    }
 
   public sendEmail(email: HttpParams) {
