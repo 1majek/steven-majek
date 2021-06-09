@@ -18,7 +18,7 @@ export interface Recientes {
 export class BodyComponent implements OnInit {
 
 
-  nombre: String = 'Adedoyin Majekodunmi';
+  nombre: String = 'Steven Majek';
   nombreIngles = 'Steven Majek';
   // tslint:disable-next-line:max-line-length
   descripcionEsp: String = 'Estudiando DAM (Desarrollo de Aplicaciones Multiplataforma), actualmente en mi último año de carrera en el centro de San Valero, España. No puedo esperar a terminar mis estudios para facilitar la vida de las personas con mis próximas aplicaciones, y por último, pero no menos importante, mejorar como programador.';
