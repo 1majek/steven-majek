@@ -1,6 +1,6 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 import { SharedServices } from '../../../services/shared-services.service';
-import { Subscription } from 'rxjs';
 
 export interface Recientes {
   taxisCalador;
@@ -37,7 +37,7 @@ export class BodyComponent implements OnInit {
 
   // skills
   // tslint:disable-next-line:max-line-length
-  skills: string[] = ['Java', 'JavaScript', 'SQL', 'Hibernate', 'Spring Boot', 'Andriod', 'Angular', 'Angular Material', 'CSS', 'Grid', 'Flex', 'Boostrap', 'Servlet', 'JSP'];
+  skills: string[] = ['Java', 'JavaScript', 'SQL', 'Hibernate', 'Spring Boot', 'Android', 'Angular', 'Angular Material', 'CSS', 'Grid', 'Flex', 'Boostrap', 'Servlet', 'JSP'];
   anio = new Date();
 
 
